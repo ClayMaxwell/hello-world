@@ -1,18 +1,32 @@
-Python 3.8.5 (tags/v3.8.5:580fbb0, Jul 20 2020, 15:43:08) [MSC v.1926 32 bit (Intel)] on win32
-Type "help", "copyright", "credits" or "license()" for more information.
->>> 8
-8
->>> 8 * 2
-16
->>> 8 ** 2
-64
->>> 8/12
-0.6666666666666666
->>> 8//12
-0
->>> 8/0
-Traceback (most recent call last):
-  File "<pyshell#5>", line 1, in <module>
-    8/0
-ZeroDivisionError: division by zero
->>> 
+def Mean(list):
+    if not list:
+        return 0
+    amount = 0
+    for num in list:
+        amount += num
+    return amount / len(list)
+def Median(list):
+    if not list:
+        return 0
+    samples = sorted(list.copy())
+    if len(samples) % 2 == 1:
+        return samples[int(len(samples) / 2)]
+    else:
+        return (samples[int(len(samples) / 2)] + samples[int(len(samples) / 2) - 1]) / 2
+def Mode(list):
+    if not list:
+        return 0
+    result = list[0]
+    count = 0
+    for num in list:
+        if list.count(num) >= count:
+            count = list.count(num)
+            result = num
+    return result
+def main():
+   List = [8, 9, 9, 2, 6, 14, 1, 3, 6, 9]
+   print('List:', List)
+   print('Mode:', Mode(List))
+   print('Median:', Median(List))
+   print('Mean:', Mean(List))
+main()
