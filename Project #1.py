@@ -8,7 +8,7 @@ class TaxCodeDemo(EasyFrame):
                   row = 0, column = 0)
         self.incomeField = self.addFloatField(value = 0.0, row = 0,
                                               column = 1)
-        self.addLabel(text = "Dependents", row = 1, column = 0)
+        self.addLabel(text = "Non-Dependents", row = 1, column = 0)
         self.depField = self.addIntegerField(value = 0, row = 1,
                                              column = 1)
         self.addLabel(text = "Exemption amount", row = 2, column = 0)
